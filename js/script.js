@@ -12,26 +12,42 @@ const bici2 = {
 
 const bici3 = {
 	nome: "Coppi",
-	peso: 8,
+	peso: 3,
 };
 
-var bici = [bici1, bici2, bici3];
+let bici = [bici1, bici2, bici3];
 
-let indicePesoMin = 0;
-let indicePesoMax = 0;
+let pesoBiciLeggera = bici[0].peso;
+
+let nomeBiciLeggera = bici[0].nome;
+// let indicePesoMin = 0;
+// let indicePesoMax = 0;
 
 for (let i = 0; i < bici.length; i++) {
-	if (bici[i].peso < bici[indicePesoMin].peso) {
-		indicePesoMin = i;
+	if (bici[i].peso < pesoBiciLeggera) {
+		pesoBiciLeggera = bici[i].peso;
+		nomeBiciLeggera = bici[i].nome;
 	}
 
-	if (bici[i].peso > bici[indicePesoMax].peso) {
-		indicePesoMin = i;
-	}
+	// if (bici[i].peso > bici[indicePesoMin].peso) {
+	// 	indicePesoMin = i;
+	// }
+
+	// if (bici[i].peso > bici[indicePesoMax].peso) {
+	// 	indicePesoMin = i;
+	// }
 }
 
-console.log(bici[indicePesoMin]);
-
+document.getElementById("mainBike").innerHTML = `
+    <div class="weight">
+        <label for="weight">Peso:</label>
+        <strong>${nomeBiciLeggera}</strong>
+    </div>
+    <div class="weight">
+        <label for="weight">Peso:</label>
+        <strong>${pesoBiciLeggera}</strong>
+    </div>
+ `;
 // Es 2
 
 // Es 2.1
